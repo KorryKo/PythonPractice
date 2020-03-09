@@ -8,14 +8,13 @@
 # Write an efficient algorithm for the following assumptions:
 # N is an integer within the range [1..100,000];
 # each element of array A is an integer within the range [−1,000,000..1,000,000].
-a = [int(i) for i in input().split()]
-ordered_a = sorted(a)
-l = len(ordered_a)
-for j in range(1,l):
-    if j not in ordered_a:
-        print(j)
-        break
-    else:
-        print(ordered_a[-1]+1)
-        break
+def solution(a):
+    ordered_a = sorted(a)
+    list_length = len(ordered_a)
+    for j in range(1, list_length):
+        if j not in ordered_a:
+            return j
+    return ordered_a[-1] + 1
 
+
+print(solution([-2, -1, 0, 1, 2, 3, 4, 5, 6, 9]))
